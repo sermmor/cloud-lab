@@ -3,7 +3,7 @@ services:
  - docker
 script:
  - docker build -t myowncloud .
-after success:
+after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  - docker tag myowncloud $DOCKER_USER/cloud_lab
  - docker push $DOCKER_USER/cloud_lab
